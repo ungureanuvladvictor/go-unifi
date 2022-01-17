@@ -208,6 +208,8 @@ func (c *Client) do(ctx context.Context, method, relativeURL string, reqBody int
 		reqReader = bytes.NewReader(reqBytes)
 	}
 
+	fmt.Printf("\n\n%s\n\n", string(reqBytes))
+
 	reqURL, err := url.Parse(relativeURL)
 	if err != nil {
 		return fmt.Errorf("unable to parse URL: %s %s %w", method, relativeURL, err)
